@@ -15,8 +15,7 @@
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <RepositoryUrl>https://github.com/Korjn/Utilities</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <PackageProjectUrl>https://github.com/Korjn/Utilities</PackageProjectUrl>
-    <PackageIconUrl>https://raw.githubusercontent.com/Korjn/Utilities/main/icon.png</PackageIconUrl> <!-- optional, если есть иконка -->
+    <PackageProjectUrl>https://github.com/Korjn/Utilities</PackageProjectUrl>    
 
     <!-- Optional: include XML docs -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
