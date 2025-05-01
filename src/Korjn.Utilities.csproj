@@ -28,7 +28,7 @@
     <PublishRelease>true</PublishRelease>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     
-    <Version>9.0.0</Version>
+    <Version>9.0.1</Version>
    
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <Description>Lightweight Oracle connection factory with DI, validation, and secure configuration via IOptions pattern.</Description>    
