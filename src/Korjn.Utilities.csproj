@@ -4,6 +4,40 @@
     <TargetFramework>net9.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
+    <!-- Metadata for NuGet package -->
+    <PackageId>Korjn.Utilities</PackageId>    
+    <Authors>Saken</Authors>
+    <Company>Korjn</Company>
+    <Product>Korjn.Utilities</Product>
+    <PackageDescription>A utility library for .NET including a high-performance unique ID generator.</PackageDescription>
+    <PackageTags>utilities idgenerator objectid uniqueid base32</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <RepositoryUrl>https://github.com/Korjn/Utilities</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageProjectUrl>https://github.com/Korjn/Utilities</PackageProjectUrl>
+    <PackageIconUrl>https://raw.githubusercontent.com/Korjn/Utilities/main/icon.png</PackageIconUrl> <!-- optional, если есть иконка -->
+
+    <!-- Optional: include XML docs -->
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <DocumentationFile>bin\$(Configuration)\$(TargetFramework)\Korjn.Utilities.xml</DocumentationFile>
+
+    
+    <PackRelease>true</PackRelease>
+    <PublishRelease>true</PublishRelease>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    
+    <Version>9.0.0</Version>
+   
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <Description>Lightweight Oracle connection factory with DI, validation, and secure configuration via IOptions pattern.</Description>    
+   
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="" />
+  </ItemGroup>
 
 </Project>
