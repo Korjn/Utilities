@@ -18,6 +18,7 @@ using Korjn.Utilities;
 
 string uniqueId = IdGenerator.NewId();
 Console.WriteLine($"Generated ID: {uniqueId}");
+```
 
 🔍 About IdGenerator
 IdGenerator generates a unique 22-character base32 string identifier:
