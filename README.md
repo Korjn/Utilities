@@ -4,12 +4,15 @@ Korjn.Utilities is a utility library for .NET, providing lightweight helper tool
 
 ## 📦 Installation
 
-You can either reference the compiled DLL directly or publish this project as a NuGet package.
+Install the package from NuGet:
 
-**Direct reference:**
-
-1. Build the project using `dotnet build` or Visual Studio.
-2. Add `Korjn.Utilities.dll` as a reference to your project.
+```bash
+dotnet add package Korjn.Utilities
+```
+or via the NuGet Package Manager:
+```bash
+Install-Package Korjn.Utilities
+```
 
 ## 📝 Usage example
 
