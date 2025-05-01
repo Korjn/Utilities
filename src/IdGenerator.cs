@@ -1,4 +1,6 @@
-﻿namespace Korkn.Utilities;
+﻿using System.Numerics;
+
+namespace Korkn.Utilities;
 
 /// <summary>
 /// IdGenerator generates a unique 22-character base32 string identifier.
@@ -43,11 +45,20 @@ public class IdGenerator
 
         // Build a 112-bit integer composed of:
         // timestamp (32 bits) + machineId (32 bits) + pid (16 bits) + increment (24 bits) + randomExtra (8 bits)
-        ulong high = ((ulong)timestamp << 80)        // shift timestamp to highest 32 bits
+
+        var value = new BigInteger(0);
+      
+        value |= (BigInteger)timestamp << 80;        // shift timestamp to highest 32 bits
+        value |= (BigInteger)(uint)machineId << 48;  // shift machineId below timestamp
+        value |= (BigInteger)pid << 32;              // shift pid below machineId
+        value |= (BigInteger)inc << 8;               // shift increment below pid
+        value |= randomExtra;                        // add randomExtra in the lowest 8 bits
+
+        /*ulong high = ((ulong)timestamp << 80)        // shift timestamp to highest 32 bits
                    | ((ulong)(uint)machineId << 48)  // shift machineId below timestamp
                    | ((ulong)pid << 32)              // shift pid below machineId
                    | ((ulong)inc << 8)               // shift increment below pid
-                   | randomExtra;                    // add randomExtra in the lowest 8 bits
+                   | randomExtra;                    // add randomExtra in the lowest 8 bits*/
 
         // Allocate buffer for 22 base32 characters (112 bits / 5 = 22.4 → 22 characters)
         Span<char> buffer = stackalloc char[22];
@@ -55,8 +66,8 @@ public class IdGenerator
         // Convert the 112-bit integer into a base32 string
         for (int i = 21; i >= 0; i--)
         {
-            buffer[i] = encodeChars[(int)(high & 31)]; // take the last 5 bits as index
-            high >>= 5;                                // shift right by 5 bits
+            buffer[i] = encodeChars[(int)(value & 31)];  // take the last 5 bits as index
+            value >>= 5;                                 // shift right by 5 bits
         }
 
         // Return the encoded string
